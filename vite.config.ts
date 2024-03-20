@@ -6,5 +6,16 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 installGlobals()
 
 export default defineConfig({
-  plugins: [remix(), tsconfigPaths()],
+  plugins: [remix({ ssr: true }), tsconfigPaths()],
+  build: {
+    terserOptions: {
+      format: {
+        comments: false
+      },
+      compress: true,
+      mangle: true,
+      toplevel: true,
+    }
+  },
+  esbuild: { legalComments: 'none', }
 })
