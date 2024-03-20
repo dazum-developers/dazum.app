@@ -9,13 +9,29 @@ installGlobals()
 export default defineConfig({
   plugins: [remix({ ssr: true }), tsconfigPaths(), viteCompression({ algorithm: 'brotliCompress' })],
   build: {
+    cssMinify: 'lightningcss',
     terserOptions: {
       format: {
         comments: false,
       },
-      compress: true,
-      mangle: true,
+      compress: {
+        arguments: true,
+        dead_code: true,
+        drop_console: true,
+        ecma: 2020,
+        module: true,
+        passes: 3,
+        toplevel: true,
+        unsafe_Function: true,
+        unsafe_methods: true,
+      },
+      mangle: {
+        eval: true,
+        module: true,
+        toplevel: true,
+      },
       toplevel: true,
+      module: true,
     },
   },
   esbuild: { legalComments: 'none' },
