@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
-import singleton from '@/singleton.server'
+import singleton from '~/app/singleton.server'
 
 function getPrismaClient() {
   const DATABASE_URL: string = process.env.DATABASE_URL as string
