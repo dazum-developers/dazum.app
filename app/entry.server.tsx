@@ -37,8 +37,8 @@ function handleBotRequest(
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false
-    const { pipe, abort } = renderToPipeableStream(
-      <RemixServer context={remixContext} url={request.url} abortDelay={ABORT_DELAY} />,
+    const { abort, pipe } = renderToPipeableStream(
+      <RemixServer abortDelay={ABORT_DELAY} context={remixContext} url={request.url} />,
       {
         onAllReady() {
           shellRendered = true
@@ -65,6 +65,7 @@ function handleBotRequest(
           // errors encountered during initial shell rendering since they'll
           // reject and get logged in handleDocumentRequest.
           if (shellRendered) {
+            // eslint-disable-next-line no-console
             console.error(error)
           }
         },
@@ -83,8 +84,8 @@ function handleBrowserRequest(
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false
-    const { pipe, abort } = renderToPipeableStream(
-      <RemixServer context={remixContext} url={request.url} abortDelay={ABORT_DELAY} />,
+    const { abort, pipe } = renderToPipeableStream(
+      <RemixServer abortDelay={ABORT_DELAY} context={remixContext} url={request.url} />,
       {
         onShellReady() {
           shellRendered = true
@@ -111,6 +112,7 @@ function handleBrowserRequest(
           // errors encountered during initial shell rendering since they'll
           // reject and get logged in handleDocumentRequest.
           if (shellRendered) {
+            // eslint-disable-next-line no-console
             console.error(error)
           }
         },
