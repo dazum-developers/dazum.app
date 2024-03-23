@@ -20,8 +20,22 @@ module.exports = {
     es6: true,
   },
 
+  ignorePatterns: ['*.config.js', '*.cjs', 'vite.config.ts'],
+
   // Base config
-  extends: ['eslint:recommended'],
+  extends: [
+    'eslint:recommended',
+    'canonical/browser',
+    'canonical/jsdoc',
+    'canonical/jsx-a11y',
+    'canonical/module',
+    'canonical/node',
+    'canonical/prettier',
+    'canonical/react',
+    'canonical/regexp',
+    'canonical/typescript',
+    'plugin:github/recommended'
+  ],
 
   overrides: [
     // React
@@ -47,6 +61,15 @@ module.exports = {
           typescript: {},
         },
       },
+      rules: {
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/member-delimiter-style': 'off',
+        '@typescript-eslint/semi': 'off',
+        '@typescript-eslint/space-before-function-paren': 'off',
+        'canonical/prefer-inline-type-import': 'off',
+        'prettier/prettier': 'off',
+        'react/function-component-definition': 'off'
+      }
     },
 
     // Typescript
@@ -54,6 +77,9 @@ module.exports = {
       files: ['**/*.{ts,tsx}'],
       plugins: ['@typescript-eslint', 'import'],
       parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: ['./tsconfig.json']
+      },
       settings: {
         'import/internal-regex': '^~/',
         'import/resolver': {
@@ -69,11 +95,11 @@ module.exports = {
     },
 
     // Node
-    {
-      files: ['.eslintrc.cjs'],
-      env: {
-        node: true,
-      },
-    },
+//    {
+//      files: ['.eslintrc.cjs'],
+//      env: {
+//        node: true,
+//      },
+//    },
   ],
 }
