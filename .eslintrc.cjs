@@ -68,7 +68,9 @@ module.exports = {
         '@typescript-eslint/space-before-function-paren': 'off',
         'canonical/prefer-inline-type-import': 'off',
         'prettier/prettier': 'off',
-        'react/function-component-definition': 'off'
+        'react/forbid-component-props': 'off',
+        'react/function-component-definition': 'off',
+        'react/jsx-newline': 'off'
       }
     },
 
