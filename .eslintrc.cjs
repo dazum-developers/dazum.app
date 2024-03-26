@@ -34,7 +34,7 @@ module.exports = {
     'canonical/react',
     'canonical/regexp',
     'canonical/typescript',
-    'plugin:github/recommended'
+    'plugin:github/recommended',
   ],
 
   overrides: [
@@ -70,8 +70,9 @@ module.exports = {
         'prettier/prettier': 'off',
         'react/forbid-component-props': 'off',
         'react/function-component-definition': 'off',
-        'react/jsx-newline': 'off'
-      }
+        'react/jsx-closing-bracket-location': 'off',
+        'react/jsx-newline': 'off',
+      },
     },
 
     // Typescript
@@ -80,7 +81,7 @@ module.exports = {
       plugins: ['@typescript-eslint', 'import'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: ['./tsconfig.json']
+        project: ['./tsconfig.json'],
       },
       settings: {
         'import/internal-regex': '^~/',
@@ -97,11 +98,11 @@ module.exports = {
     },
 
     // Node
-//    {
-//      files: ['.eslintrc.cjs'],
-//      env: {
-//        node: true,
-//      },
-//    },
+    //    {
+    //      files: ['.eslintrc.cjs'],
+    //      env: {
+    //        node: true,
+    //      },
+    //    },
   ],
 }
