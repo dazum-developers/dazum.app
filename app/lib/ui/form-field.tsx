@@ -1,6 +1,6 @@
+import { clsx } from 'clsx'
 import type { JSX, LegacyRef } from 'react'
 import { forwardRef } from 'react'
-import { clsx } from 'clsx'
 
 import Input from './input'
 
@@ -13,7 +13,7 @@ function FormFieldComp(props: Readonly<FormFieldProps>, ref: LegacyRef<HTMLInput
     <div className='flex flex-col gap-1 w-full'>
       <label htmlFor={id}>{label}</label>
       <Input {...rest} className={clsx(error ? 'border-red-500 bg-red-100' : '')} id={id} ref={ref} />
-      {errorMessage ? <p className='text-red-500 text-xs'>{errorMessage}</p> : null}
+      {error ? <p className='text-red-500 text-xs'>{errorMessage}</p> : null}
     </div>
   )
 }
