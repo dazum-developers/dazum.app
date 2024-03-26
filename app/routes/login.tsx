@@ -1,7 +1,7 @@
 import { type JSX } from 'react'
 
-import type { ActionFunctionArgs } from '@remix-run/node'
-import { Form, Link, useActionData } from '@remix-run/react'
+import type { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
+import { Form, Link, json, redirect, useActionData } from '@remix-run/react'
 
 import FormatMessage from '~/app/components/format-message'
 import FormField from '~/app/lib/ui/form-field'
@@ -14,6 +14,17 @@ import { loginController } from '../application/controller/login'
 import AppleIcon from '~/app/assets/icons/apple.svg?react'
 // @ts-expect-error Cannot find module
 import GoogleIcon from '~/app/assets/icons/google.svg?react'
+import { getUserSession } from '../session.server'
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const payload = await getUserSession(request)
+
+  if (payload.data?.id) {
+    return redirect('/dashboard')
+  }
+
+  return json(payload?.data, 200)
+}
 
 export async function action(props: ActionFunctionArgs) {
   return await loginController(props)

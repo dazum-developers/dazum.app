@@ -21,7 +21,7 @@ export const storage = createCookieSessionStorage({
   },
 })
 
-function getUserSession(request: Request) {
+export function getUserSession(request: Request) {
   return storage.getSession(request.headers.get('Cookie'))
 }
 
