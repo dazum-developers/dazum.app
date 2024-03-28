@@ -22,6 +22,7 @@ model User {
   id             String       @id @default(auto()) @map("_id") @db.ObjectId
   email          String       @unique
   fullname       String
+  designation    String       @default("Employee")
   emailVerified  Boolean      @default(false)
   isBan          Boolean      @default(false)
   source         InviteSource @default(REGISTRATION)
