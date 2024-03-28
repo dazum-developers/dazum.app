@@ -41,6 +41,7 @@ export async function createUserSession(user: User, path: string): Promise<Typed
   session.set('fullname', user.fullname)
   session.set('email', user.email)
   session.set('emailVerified', user.emailVerified)
+  session.set('designation', user.designation)
   return redirect(path, {
     headers: {
       'Set-Cookie': await storage.commitSession(session),
