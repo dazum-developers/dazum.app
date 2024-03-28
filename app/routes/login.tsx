@@ -9,12 +9,10 @@ import FormField from '~/app/lib/ui/form-field'
 import type { ResponseDto } from '~/app/application/contracts/response/response'
 import { DError } from '~/app/application/enums/errors'
 import { loginController } from '../application/controller/login'
-
-// @ts-expect-error Cannot find module
-import AppleIcon from '~/app/assets/icons/apple.svg?react'
-// @ts-expect-error Cannot find module
-import GoogleIcon from '~/app/assets/icons/google.svg?react'
 import { getUserSession } from '../session.server'
+
+import AppleIcon from '~/app/assets/icons/apple.svg?react'
+import GoogleIcon from '~/app/assets/icons/google.svg?react'
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const payload = await getUserSession(request)
