@@ -3,11 +3,24 @@ import { installGlobals } from '@remix-run/node'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import viteCompression from 'vite-plugin-compression'
+import svgr from 'vite-plugin-svgr'
 
 installGlobals()
 
 export default defineConfig({
-  plugins: [remix({ ssr: true }), tsconfigPaths(), viteCompression({ algorithm: 'brotliCompress' })],
+  plugins: [
+    remix({ ssr: true }),
+    tsconfigPaths(),
+    svgr({
+      svgrOptions: {
+        dimensions: true,
+        exportType: 'default',
+        jsxRuntime: 'classic',
+        memo: true,
+      }
+    }),
+    viteCompression({ algorithm: 'brotliCompress' })
+  ],
   build: {
     cssMinify: 'lightningcss',
     terserOptions: {

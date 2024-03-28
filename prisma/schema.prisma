@@ -12,3 +12,31 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+enum InviteSource {
+    REGISTRATION
+    INVITE
+}
+
+model User {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  email          String       @unique
+  fullname       String
+  designation    String       @default("Employee")
+  emailVerified  Boolean      @default(false)
+  isBan          Boolean      @default(false)
+  source         InviteSource @default(REGISTRATION)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  cereal         Cereal?
+  isSuperAdmin   Boolean      @default(false)
+}
+
+model Cereal {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  key            String
+  user           User         @relation(fields: [userId], references: [id])
+  userId         String       @unique @db.ObjectId // relation scalar field (used in the `@relation` attribute above)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
