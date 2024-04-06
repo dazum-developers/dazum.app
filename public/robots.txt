@@ -9,4 +9,4 @@ User-agent: AdsBot-Google-Mobile-Apps
 User-agent: *
 # Disallow: /config
 
-# Sitemap: https://exampl.com/sitemap.xml
+Sitemap: https://dazum.app/sitemap.xml
