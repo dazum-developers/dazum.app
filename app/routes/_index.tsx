@@ -3,7 +3,7 @@ import type { MetaFunction } from '@remix-run/node'
 import type { JSX } from 'react'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'New Remix App' }, { name: 'description', content: 'Welcome to Remix!' }]
+  return [{ title: 'Dazum App' }, { name: 'description', content: 'Automate your development process at ease.' }]
 }
 
 export default function Index(): JSX.Element {
