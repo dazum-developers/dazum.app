@@ -17,7 +17,7 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
         <meta content='Automate your development process at ease.' name='description' />
         <meta content='Automate your development process at ease.' name='og:description' />
         
-        <link href='https://dazum.app/' rel='canonical'>
+        <link href='https://dazum.app/' rel='canonical' />
 
         <title>Dazum App</title>
         
