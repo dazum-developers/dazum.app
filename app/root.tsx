@@ -12,14 +12,12 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <meta charSet='utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
-        <meta content='Tanmay Mazumdar' property='og:title' />
+        <meta content='Dazum App' property='og:title' />
         <meta content='https://dazum.app' property='og:url' />
         <meta content='Automate your development process at ease.' name='description' />
         <meta content='Automate your development process at ease.' name='og:description' />
         
         <link href='https://dazum.app/' rel='canonical' />
-
-        <title>Dazum App</title>
         
         <Meta />
         <Links />
