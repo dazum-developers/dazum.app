@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        recoleta: ['Recoleta', 'sans-serif'],
+        recoleta: ["'Recoleta'", 'sans-serif'],
       },
     },
   },
