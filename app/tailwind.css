@@ -7,7 +7,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  /* src: url('../public/fonts/Inter-Regular.woff2') format('woff2'); */
+  /* src: url('https://dazum.app/public/fonts/Inter-Regular.woff2') format('woff2'); */
 }
 
 @font-face {
@@ -15,9 +15,15 @@
   font-family: 'Recoleta';
   font-style: normal;
   font-weight: 400;
-  /* src: url('../public/fonts/Recoleta-Regular.woff2') format('woff2'); */
+  /* src: url('https://dazum.app/public/fonts/Recoleta-Regular.woff2') format('woff2'); */
 }
 
 :root {
   font-family: 'Inter', sans-serif;
+}
+
+.w-nav:before {
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+  content: '';
 }
