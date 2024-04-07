@@ -1,5 +1,8 @@
 const en = {
-  Logo: 'Daily',
+  Logo: 'Dazum',
+  Privacy: 'Privacy Policy',
+  Terms: 'Terms of Service',
+  Cookies: 'Cookies Settings',
   Or: 'OR',
 
   // LOGIN PAGE
@@ -11,7 +14,6 @@ const en = {
   'LoginPage.RememberMe': 'Remember me',
   'LoginPage.ForgotPassword': 'Forgot password?',
   'LoginPage.SignInToYourAccount': 'Sign in to your account',
-  
 }
 
 export default en
