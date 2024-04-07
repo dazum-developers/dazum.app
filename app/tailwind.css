@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  /* src: url('../public/fonts/Inter-Regular.woff2') format('woff2'); */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Recoleta';
+  font-style: normal;
+  font-weight: 400;
+  /* src: url('../public/fonts/Recoleta-Regular.woff2') format('woff2'); */
+}
+
+:root {
+  font-family: 'Inter', sans-serif;
+}

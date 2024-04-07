@@ -1,10 +1,24 @@
-import type { ReactNode } from 'react'
+import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
-import { type LinksFunction } from '@remix-run/node'
+import type { ReactNode } from 'react'
 
 import stylesheet from '~/app/tailwind.css?url'
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }]
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: stylesheet },
+  { rel: 'canonical', href: 'https://dazum.app' },
+  { rel: 'preload', as: 'font', href: 'fonts/Inter-Regular.woff2', type: 'font/woff2', crossOrigin: 'anonymous' },
+  { rel: 'preload', as: 'font', href: 'fonts/Recoleta-Regular.woff2', type: 'font/woff2', crossOrigin: 'anonymous' },
+]
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: 'Dazum App' },
+    { name: 'description', content: 'Automate your development process at ease.' },
+    { name: 'og:description', content: 'Automate your development process at ease.' },
+    { name: 'og:url', content: 'https://dazum.app' },
+  ]
+}
 
 export function Layout({ children }: Readonly<{ children: ReactNode }>) {
   return (
@@ -12,13 +26,7 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <meta charSet='utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
-        <meta content='Dazum App' property='og:title' />
-        <meta content='https://dazum.app' property='og:url' />
-        <meta content='Automate your development process at ease.' name='description' />
-        <meta content='Automate your development process at ease.' name='og:description' />
-        
-        <link href='https://dazum.app/' rel='canonical' />
-        
+
         <Meta />
         <Links />
       </head>

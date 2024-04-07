@@ -1,10 +1,5 @@
 // eslint-disable-next-line filenames/match-regex
-import type { MetaFunction } from '@remix-run/node'
 import type { JSX } from 'react'
-
-export const meta: MetaFunction = () => {
-  return [{ title: 'Dazum App' }, { name: 'description', content: 'Automate your development process at ease.' }]
-}
 
 export default function Index(): JSX.Element {
   return (
