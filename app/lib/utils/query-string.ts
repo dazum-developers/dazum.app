@@ -7,7 +7,7 @@ export default function qs(query: Json | undefined): string {
     if (v && v !== '') {
       a.push(`${k}=${v}`)
     }
-    
+
     return a
   }, [])
 
