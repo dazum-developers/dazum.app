@@ -1,19 +1,20 @@
-import type { JSX } from 'react'
+/* eslint-disable  @typescript-eslint/indent */
+import type { JSX, PropsWithChildren } from 'react'
 
-import { EasingFunction, motion } from 'framer-motion'
-import { PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react'
+import { motion, type EasingFunction } from 'framer-motion'
+import { useContext, useEffect, useMemo, useState } from 'react'
 
 import { IntersectionContext } from '~/app/context/intersection-observer'
 
 export default function FadeInUp({
   children,
-  yOffset = 24,
-  easing = 'linear',
   delayOrder,
+  easing = 'linear',
+  yOffset = 24,
 }: Readonly<
   PropsWithChildren<
     Partial<{
-      yOffset: number
+      delayOrder: number
       easing:
         | number[]
         | 'linear'
@@ -28,7 +29,7 @@ export default function FadeInUp({
         | 'backInOut'
         | 'anticipate'
         | EasingFunction
-      delayOrder: number
+      yOffset: number
     }>
   >
 >): JSX.Element {
@@ -61,7 +62,7 @@ export default function FadeInUp({
   }
 
   return (
-    <motion.div animate={inView ? 'show' : 'hidden'} initial='hidden' exit='hidden' variants={variants}>
+    <motion.div animate={inView ? 'show' : 'hidden'} exit='hidden' initial='hidden' variants={variants}>
       {children}
     </motion.div>
   )

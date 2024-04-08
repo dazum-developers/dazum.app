@@ -17,9 +17,9 @@ export default defineConfig({
         exportType: 'default',
         jsxRuntime: 'classic',
         memo: true,
-      }
+      },
     }),
-    viteCompression({ algorithm: 'brotliCompress' })
+    viteCompression({ algorithm: 'brotliCompress' }),
   ],
   build: {
     cssMinify: 'lightningcss',

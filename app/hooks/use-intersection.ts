@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react'
+import { useEffect, useState, type RefObject } from 'react'
 
 const useIntersection = (
   ref: RefObject<HTMLElement>,
@@ -20,8 +20,9 @@ const useIntersection = (
         observer.disconnect()
       }
     }
+
     return () => {}
-  }, [ref.current, options.threshold, options.root, options.rootMargin])
+  }, [ref.current, options.threshold, options.root, options.rootMargin]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return intersectionObserverEntry
 }
