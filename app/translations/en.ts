@@ -4,6 +4,15 @@ const en = {
   Terms: 'Terms of Service',
   Cookies: 'Cookies Settings',
   Or: 'OR',
+  Login: 'Login',
+  Rights: 'All rights reserved.',
+
+  'LandingPage.Heading': 'Our cutting-edge software solutions',
+  'LandingPage.SubHeading': 'An automated project board to make developers life easier.',
+  'LandingPage.Features.SubHeading': 'Deploy faster',
+  'LandingPage.Features.Heading': 'A better workflow',
+  'LandingPage.Features.Description':
+    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
 
   // LOGIN PAGE
   'LoginPage.WelcomeBack': 'Welcome Back',
