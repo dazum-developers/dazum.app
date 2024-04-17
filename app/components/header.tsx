@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
             <span className='sr-only'>
               <FormatMessage id='Logo' />
             </span>
-            <img alt='Logo' className='h-8 w-auto' src='/images/logo.png' />
+            <img alt='Logo' className='h-8 w-auto' height='44px' src='/images/logo.png' width='44px' />
           </Link>
         </div>
         {/* <div className='hidden lg:flex lg:gap-x-12'>
