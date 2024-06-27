@@ -2,7 +2,10 @@ import type { ComponentProps, JSX, LegacyRef } from 'react'
 import { forwardRef } from 'react'
 import { clsx } from 'clsx'
 
-function InputComp(props: Readonly<ComponentProps<'input'>>, ref: LegacyRef<HTMLInputElement> | undefined): JSX.Element {
+function InputComp(
+  props: Readonly<ComponentProps<'input'>>,
+  ref: LegacyRef<HTMLInputElement> | undefined,
+): JSX.Element {
   return (
     <input
       {...props}
