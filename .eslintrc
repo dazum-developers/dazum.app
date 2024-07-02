@@ -42,8 +42,14 @@
         },
         "formComponents": ["Form"],
         "linkComponents": [
-          { "name": "Link", "linkAttribute": "to" },
-          { "name": "NavLink", "linkAttribute": "to" }
+          {
+            "name": "Link",
+            "linkAttribute": "to"
+          },
+          {
+            "name": "NavLink",
+            "linkAttribute": "to"
+          }
         ],
         "import/resolver": {
           "typescript": {}
@@ -55,13 +61,15 @@
         "@typescript-eslint/semi": "off",
         "@typescript-eslint/space-before-function-paren": "off",
         "canonical/prefer-inline-type-import": "off",
+        "jsdoc/tag-lines": "off",
         "prettier/prettier": "off",
         "react/forbid-component-props": "off",
         "react/function-component-definition": "off",
         "react/jsx-closing-bracket-location": "off",
         "react/jsx-newline": "off"
       }
-    }, {
+    },
+    {
       "files": ["**/*.{ts,tsx}"],
       "plugins": ["@typescript-eslint", "import"],
       "parser": "@typescript-eslint/parser",
@@ -79,8 +87,14 @@
           }
         }
       },
-      "extends": ["plugin:@typescript-eslint/recommended", "plugin:import/recommended", "plugin:import/typescript"]
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+      ],
+      "rules": {
+        "jsdoc/tag-lines": "off"
+      }
     }
   ]
 }
-
