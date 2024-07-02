@@ -53,6 +53,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "critters": "^0",
     "eslint": "^9",
     "eslint-config-canonical": "^43",
     "eslint-config-next": "^14",
