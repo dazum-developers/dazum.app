@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 
+import { nextui } from '@nextui-org/react'
 import forms from '@tailwindcss/forms'
 
 const config: Config = {
@@ -12,7 +13,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [forms()],
+  darkMode: 'class',
+  plugins: [nextui(), forms()],
 }
 
 export default config
