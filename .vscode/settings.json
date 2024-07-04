@@ -1,7 +1,5 @@
 {
-  "css.customData": [
-    ".vscode/tailwind.json"
-  ],
+  "css.customData": [".vscode/tailwind.json"],
   "css.validate": false,
   // When enabled, the diff editor ignores changes in leading or trailing whitespace.
   "diffEditor.ignoreTrimWhitespace": false,
@@ -19,6 +17,8 @@
   "editor.tabSize": 2,
   // Controls whether eslint is enabled or not.
   "eslint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.useFlatConfig": false,
   "files.exclude": {
     "**/coverage": true
   },
