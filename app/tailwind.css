@@ -2,28 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-display: swap;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  /* src: url('https://dazum.app/public/fonts/Inter-Regular.woff2') format('woff2'); */
-}
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://dazum.app/fonts/Inter-Regular.woff2') format('woff2');
+  }
 
-@font-face {
-  font-display: swap;
-  font-family: 'Recoleta';
-  font-style: normal;
-  font-weight: 400;
-  /* src: url('https://dazum.app/public/fonts/Recoleta-Regular.woff2') format('woff2'); */
+  @font-face {
+    font-display: swap;
+    font-family: 'Recoleta';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://dazum.app/fonts/Recoleta-Regular.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Recoleta';
+    font-style: normal;
+    font-weight: 600;
+    src: url('https://dazum.app/fonts/Recoleta-SemiBold.woff2') format('woff2');
+  }
 }
 
 :root {
   font-family: 'Inter', sans-serif;
-}
-
-.w-nav:before {
-  grid-area: 1 / 1 / 2 / 2;
-  display: table;
-  content: '';
 }
