@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { createContext, memo, useEffect, useRef, useState } from 'react'
 
-import useIntersection from '../hooks/use-intersection'
+import useIntersection from '~/app/hooks/use-intersection'
 
 export const IntersectionContext = createContext({ inView: true })
 

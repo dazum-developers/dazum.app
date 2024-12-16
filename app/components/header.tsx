@@ -12,17 +12,14 @@ export default function Header(): JSX.Element {
             <span className='sr-only'>
               <FormatMessage id='Logo' />
             </span>
-            <img alt='Logo' className='h-8 w-auto' height='44px' src='/images/logo.png' width='44px' />
+            <img alt='Logo' className='h-10 w-auto' height='64px' src='/dazum-logo.svg' width='64px' />
           </Link>
         </div>
-        {/* <div className='hidden lg:flex lg:gap-x-12'>
-            <a key={item.name} href={item.href} className='text-sm font-semibold leading-6 text-gray-900'>{item.name}</a>
-          </div> */}
-        <Link
-          className='inline-block transition-all text-sm py-1.5 px-6 font-inter text-center bg-transparent rounded-full border border-solid border-[#e4e5e7] hover:bg-[#e4e5e7]'
-          to='/login'>
-          <FormatMessage id='Login' />
-        </Link>
+        <div className='hidden lg:flex lg:gap-x-12'>
+          <Link className='text-sm font-semibold leading-6 text-gray-900' to='/'>
+            <FormatMessage id='Logo' />
+          </Link>
+        </div>
       </nav>
     </header>
   )
