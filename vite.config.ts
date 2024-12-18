@@ -4,11 +4,13 @@ import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import viteCompression from 'vite-plugin-compression'
 import svgr from 'vite-plugin-svgr'
+import mdx from '@mdx-js/rollup'
 
 installGlobals()
 
 export default defineConfig({
   plugins: [
+    {enforce: 'pre', ...mdx({})},
     remix({ ssr: true }),
     tsconfigPaths(),
     svgr({
