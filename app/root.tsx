@@ -1,6 +1,6 @@
 import type { LinksFunction } from '@remix-run/node'
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
-import type { JSX, ReactNode } from 'react'
+import { json, Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useRouteError } from '@remix-run/react'
+import { useCallback, type JSX, type ReactNode } from 'react'
 
 import stylesheet from './tailwind.css?url'
 
@@ -10,7 +10,27 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
 ]
 
+export async function loader() {
+  return json({
+    ENV: {
+      MIXPANEL: process.env.MIXPANEL,
+    },
+  })
+}
+
 export function Layout({ children }: Readonly<{ children: ReactNode }>) {
+  const data: any = useLoaderData()
+
+  const handleLoad = useCallback(() => {
+    if (window.mixpanel) {
+      window.mixpanel.init(data?.ENV.MIXPANEL, {
+        track_pageview: true,
+        persistence: 'localStorage',
+        dz_page: 'home',
+      })
+    }
+  }, [])
+
   return (
     <html lang='en'>
       <head>
@@ -20,10 +40,11 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
         <Meta />
         <Links />
       </head>
-      <body className='bg-cream-100 flex flex-col w-full gap-16'>
+      <body className='bg-cream-100 flex flex-col w-full gap-16' onLoad={handleLoad}>
         {children}
         <ScrollRestoration />
         <Scripts />
+        <script src='/scripts/mx.js'></script>
       </body>
     </html>
   )
@@ -31,4 +52,27 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
 
 export default function App(): JSX.Element {
   return <Outlet />
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError()
+  console.error(error)
+
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {/* add the UI you want your users to see */}
+        <Scripts />
+      </body>
+    </html>
+  )
+}
+
+export function HydrateFallback() {
+  return <p>Loading Game...</p>
 }
