@@ -40,7 +40,7 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
         <Meta />
         <Links />
       </head>
-      <body className='bg-cream-100 flex flex-col w-full gap-16' onLoad={handleLoad}>
+      <body className='bg-cream-100 flex flex-col w-full gap-12 md:gap-16' onLoad={handleLoad}>
         {children}
         <ScrollRestoration />
         <Scripts />

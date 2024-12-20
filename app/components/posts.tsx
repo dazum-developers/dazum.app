@@ -20,10 +20,10 @@ export default function Posts({ posts }: PostProps): JSX.Element {
     <main className='flex flex-col mx-auto max-w-5xl gap-14 px-4'>
       {(posts || [])?.map((post, i) => (
         <Link
-          className='flex gap-10 items-center hover:text-blue-500 group cursor-pointer'
+          className='flex flex-col items-start md:gap-10 md:flex-row md:items-center hover:text-blue-500 group cursor-pointer'
           key={post.id}
           to={`/blog/${post.slug}`}>
-          <p className='font-mono min-w-fit group-hover:text-blue-500'>{formatDate(post.timestamp)}</p>
+          <p className='font-mono min-w-fit text-zinc-700 group-hover:text-blue-500'>{formatDate(post.timestamp)}</p>
 
           <div className='flex flex-col'>
             <h2 className='font-recoleta text-xl text-black group-hover:text-blue-500'>{post.title}</h2>

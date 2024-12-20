@@ -7,18 +7,21 @@ export default {
         // Configure your color palette here
         cream: {
           100: '#FFFEFD',
-          900: '#674B14'
-        }
+          900: '#674B14',
+        },
       },
       fontFamily: {
         inter: ['Inter'],
         recoleta: ["'Recoleta'"],
       },
     },
+    screens: {
+      xs: '20rem',
+    },
     variants: {
       extend: {
         textColor: ['group-hover'],
-      }
+      },
     },
   },
   plugins: [],
