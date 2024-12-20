@@ -1,13 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,jsx,ts,tsx}', 'node_modules/preline/dist/*.js'],
+  content: ['./src/**/*.{html,js,ts,jsx,tsx}', './app/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        // Configure your color palette here
+        cream: {
+          100: '#FFFEFD',
+          900: '#674B14',
+        },
+      },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        recoleta: ["'Recoleta'", 'sans-serif'],
+        inter: ['Inter'],
+        recoleta: ["'Recoleta'"],
+      },
+    },
+    screens: {
+      xs: '20rem',
+    },
+    variants: {
+      extend: {
+        textColor: ['group-hover'],
       },
     },
   },
-  plugins: [require('preline/plugin')],
+  plugins: [],
 }
